@@ -1,0 +1,20 @@
+//===-------- Selected.cpp - Implementation of the Selected class  --------===//
+//
+//                              The VMKit project
+//
+// This file is distributed under the University of Illinois Open Source 
+// License. See LICENSE.TXT for details.
+//
+//===----------------------------------------------------------------------===//
+
+#include "MutatorThread.h"
+#include "MMTkObject.h"
+#include <stdio.h>
+#define LOG_TRACE fprintf(stderr, "Entering %s() (%s:%d)\n", __FUNCTION__, __FILE__, __LINE__);
+namespace mmtk {
+
+extern "C" MMTkObject* Java_org_j3_config_Selected_00024Mutator_get__() {
+  return (MMTkObject*)vmkit::MutatorThread::get()->MutatorContext;
+}
+
+}
