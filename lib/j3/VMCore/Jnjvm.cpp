@@ -1266,7 +1266,6 @@ void Jnjvm::executePremain(const char* className, JavaString* args,
 }
 
 void Jnjvm::mainJavaStart(JavaThread* thread) {
-  //std::cerr << "--------------------------mainJavaStart ---------------------------------------" << std::endl;
   JavaString* str = NULL;
   JavaObject* instrumenter = NULL;
   ArrayObject* args = NULL;
@@ -1338,7 +1337,6 @@ void ThreadSystem::enter() {
 }
 
 void Jnjvm::runApplication(int argc, char** argv) {
-  //std::cerr << "-------------------------runApplication-----------------------------------" << std::endl;
   argumentsInfo.argc = argc;
   argumentsInfo.argv = argv;
   mainThread = new JavaThread(this);

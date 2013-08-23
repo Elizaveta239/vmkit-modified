@@ -18,8 +18,6 @@ import org.mmtk.utility.options.Options;
 import org.mmtk.utility.options.PrintPhaseStats;
 import org.mmtk.utility.options.XmlStats;
 
-//import org.mmtk.vm.VM;
-
 import org.vmmagic.pragma.*;
 
 /**

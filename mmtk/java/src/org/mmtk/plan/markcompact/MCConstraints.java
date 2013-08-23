@@ -35,9 +35,7 @@ public class MCConstraints extends StopTheWorldConstraints {
   @Override
   public boolean needsLinearScan() { return true; }
   @Override
-  public int maxNonLOSDefaultAllocBytes() { 
-Log.write("-------------------------------------dfsjhfjskryhukweryhkfhkjdshfkjsfhkjfshjkshfkj");
- return MarkCompactLocal.MINIMUM_DATA_SIZE; }
+  public int maxNonLOSDefaultAllocBytes() { return MarkCompactLocal.MINIMUM_DATA_SIZE; }
   @Override
   public int gcHeaderBits() { return MarkCompactSpace.LOCAL_GC_BITS_REQUIRED; }
   @Override

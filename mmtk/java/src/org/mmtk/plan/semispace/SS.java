@@ -76,7 +76,6 @@ public class SS extends StopTheWorld {
    * Constructor
    */
   public SS() {
-Log.write("---------------------------SS constructor invoked");
     ssTrace = new Trace(metaDataSpace);
   }
 
@@ -108,8 +107,7 @@ Log.write("---------------------------SS constructor invoked");
    * @param phaseId Collection phase
    */
   @Inline
-  public void collectionPhase(short phaseId) {
-	Log.write("\n" +"-----------------collectionpajse" + "\n");    
+  public void collectionPhase(short phaseId) { 
 	if (phaseId == SS.PREPARE) {
       hi = !hi; // flip the semi-spaces
       // prepare each of the collected regions

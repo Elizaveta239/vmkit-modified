@@ -9,8 +9,6 @@
 
 #include "MutatorThread.h"
 #include "MMTkObject.h"
-#include <stdio.h>
-#define LOG_TRACE fprintf(stderr, "Entering %s() (%s:%d)\n", __FUNCTION__, __FILE__, __LINE__);
 namespace mmtk {
 
 extern "C" MMTkObject* Java_org_j3_config_Selected_00024Mutator_get__() {

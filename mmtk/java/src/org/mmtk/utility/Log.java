@@ -12,9 +12,9 @@
  */
 package org.mmtk.utility;
 
-//import org.mmtk.vm.VM;
 import org.j3.mmtk.*;
 import org.j3.runtime.VM;
+import org.mmtk.vm.VM;
 
 import org.vmmagic.unboxed.*;
 import org.vmmagic.pragma.*;
@@ -269,7 +269,7 @@ public class Log implements Constants {
    *
    * @param s the string to be logged
    */
-  public static void write(String s) { 
+  public static void write(String s) {
     add(s);
   }
 

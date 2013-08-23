@@ -68,8 +68,10 @@ public class MS extends StopTheWorld {
    */
   @Inline
   @Override
-  public void collectionPhase(short phaseId) {    
-	if (phaseId == PREPARE) {
+
+  public void collectionPhase(short phaseId) {
+
+    if (phaseId == PREPARE) {
       super.collectionPhase(phaseId);
       msTrace.prepare();
       msSpace.prepare(true);

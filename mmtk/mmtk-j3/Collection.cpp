@@ -11,9 +11,6 @@
 #include "vmkit/VirtualMachine.h"
 #include "MMTkObject.h"
 #include "VmkitGC.h"
-#include <iostream>
-#include <stdio.h>
-#define LOG_TRACE fprintf(stderr, "Entering %s() (%s:%d)\n", __FUNCTION__, __FILE__, __LINE__);
 namespace mmtk {
 
 extern "C" bool Java_org_j3_mmtk_Collection_isEmergencyAllocation__ (MMTkObject* C) {
@@ -50,13 +47,13 @@ extern "C" void Java_org_j3_mmtk_Collection_triggerCollection__I (MMTkObject* C,
 }
 
 extern "C" void Java_org_j3_mmtk_Collection_joinCollection__ (MMTkObject* C) {
- vmkit::Thread* th = vmkit::Thread::get();
+  vmkit::Thread* th = vmkit::Thread::get();
   assert(th->inRV && "Joining collection without a rendezvous");
   th->MyVM->rendezvous.join();
 }
 
 extern "C" int Java_org_j3_mmtk_Collection_rendezvous__I (MMTkObject* C, int where) {
-	return 1;
+  return 1;
 }
 
 extern "C" int Java_org_j3_mmtk_Collection_maximumCollectionAttempt__ (MMTkObject* C) {

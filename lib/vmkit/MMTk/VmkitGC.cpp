@@ -14,6 +14,7 @@
 #include <set>
 #include <iostream>
 
+
 using namespace vmkit;
 
 static vmkit::SpinLock lock;
@@ -21,7 +22,7 @@ std::set<gc*> __InternalSet__;
 int Collector::verbose = 0;
 
 extern "C" void* prealloc(uint32_t sz) {
-  std::cerr << "----------------------prealloc" << std::endl;
+
   gc* res = 0;
   llvm_gcroot(res, 0);
   gcHeader* head = 0;
@@ -39,13 +40,12 @@ extern "C" void* prealloc(uint32_t sz) {
 }
 
 extern "C" void postalloc(gc* obj, void* type, uint32_t size) {
-	std::cerr << "----------------------postalloc" << std::endl;
 	llvm_gcroot(obj, 0);
 	vmkit::Thread::get()->MyVM->setType(obj, type);
 }
 
 extern "C" void* vmkitgcmalloc(uint32_t sz, void* type) {
-	std::cerr << "----------------------vmkitgcmalloc" << std::endl;
+
   gc* res = 0;
   llvm_gcroot(res, 0);
   sz += gcHeader::hiddenHeaderSize();

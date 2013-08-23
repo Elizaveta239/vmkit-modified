@@ -11,8 +11,6 @@
 #include "vmkit/VirtualMachine.h"
 #include "MMTkObject.h"
 #include "VmkitGC.h"
-#include <iostream>
-#include <stdio.h>
 namespace mmtk {
 
 extern "C" void Java_org_j3_mmtk_Scanning_computeThreadRoots__Lorg_mmtk_plan_TraceLocal_2 (MMTkObject* Scanning, MMTkObject* TL) {
@@ -28,9 +26,7 @@ extern "C" void Java_org_j3_mmtk_Scanning_computeThreadRoots__Lorg_mmtk_plan_Tra
 }
 
 extern "C" void Java_org_j3_mmtk_Scanning_computeGlobalRoots__Lorg_mmtk_plan_TraceLocal_2 (MMTkObject* Scanning, MMTkObject* TL) { 
-	//std::cerr <<"----------------JAVA_ORG_SMTH" <<std::endl;
-	vmkit::Thread::get()->MyVM->tracer(reinterpret_cast<word_t>(TL));
-
+  vmkit::Thread::get()->MyVM->tracer(reinterpret_cast<word_t>(TL));
 	vmkit::Thread* th = vmkit::Thread::get();
   vmkit::Thread* tcur = th;
   

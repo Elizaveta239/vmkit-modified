@@ -29,8 +29,6 @@ import org.mmtk.utility.sanitychecker.SanityChecker;
 import org.mmtk.utility.statistics.Timer;
 import org.mmtk.utility.statistics.Stats;
 import org.j3.runtime.VM;
-
-//import org.mmtk.vm.VM;
 import org.mmtk.vm.Collection;
 
 
@@ -162,7 +160,6 @@ public abstract class Plan implements Constants {
    * Constructor.
    */
   public Plan() {
-	org.j3.runtime.VM.sysWriteln("=====Plan Constructor");
     /* Create base option instances */
     Options.verbose = new Verbose();
     Options.verboseTiming = new VerboseTiming();

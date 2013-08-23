@@ -21,9 +21,7 @@ public class Selected {
     private static final Plan plan = new Plan();
 
     @Inline
-    public static Plan get() { 
-    Log.write("---------------------------------------");
-    return plan; }
+    public static Plan get() { return plan; }
   }
 
   @Uninterruptible

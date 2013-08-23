@@ -38,7 +38,5 @@ public class CopyMSConstraints extends StopTheWorldConstraints {
   @Override
   public boolean movesObjects() { return true; }
   @Override
-  public int maxNonLOSCopyBytes() { 
-Log.write("------------dsfgsfgfgfgfgfgggggggggggggggggggggggggggggggggggggggggg------------");
-return SegregatedFreeListSpace.MAX_FREELIST_OBJECT_BYTES;}
+  public int maxNonLOSCopyBytes() { return SegregatedFreeListSpace.MAX_FREELIST_OBJECT_BYTES;}
 }

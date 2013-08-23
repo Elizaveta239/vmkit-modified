@@ -75,9 +75,8 @@ public class CopyMS extends StopTheWorld {
   /**
    * Constructor.
  */
-  public CopyMS() {
-	Log.write("----------------------you gonna waste all this time-------");    
-	trace = new Trace(metaDataSpace);
+  public CopyMS() { 
+    trace = new Trace(metaDataSpace);
   }
 
 

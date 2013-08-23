@@ -12,8 +12,6 @@
 #include "MMTkObject.h"
 
 #include <sys/mman.h>
-#include <iostream>
-#include <stdio.h>
 namespace mmtk {
 
 class InitCollector {
@@ -53,8 +51,7 @@ Java_org_j3_mmtk_Memory_dzmmap__Lorg_vmmagic_unboxed_Address_2I(MMTkObject* M,
                                                                 void* start,
                                                                 sint32 size) {
   // Already mmapped during initialization.
-  //LOG_TRACE
-	return 0;
+  return 0;
 }
 
 extern "C" uint8_t
@@ -65,7 +62,7 @@ Java_org_j3_mmtk_Memory_mprotect__Lorg_vmmagic_unboxed_Address_2I (MMTkObject* M
 
 extern "C" uint8_t
 Java_org_j3_mmtk_Memory_munprotect__Lorg_vmmagic_unboxed_Address_2I (MMTkObject* M, word_t address, sint32 size) {
-	int val = mprotect((void*)address, size, PROT_READ | PROT_WRITE);
+  int val = mprotect((void*)address, size, PROT_READ | PROT_WRITE);
   return (val == 0);
 }
 
@@ -73,8 +70,8 @@ extern "C" void
 Java_org_j3_mmtk_Memory_zero__Lorg_vmmagic_unboxed_Address_2Lorg_vmmagic_unboxed_Extent_2(MMTkObject* M,
                                                                                           void* addr,
                                                                                           word_t len) {
- //LOG_TRACE
-	memset(addr, 0, len);
+
+  memset(addr, 0, len);
 }
 
 extern "C" void
