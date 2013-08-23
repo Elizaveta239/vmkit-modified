@@ -29,8 +29,6 @@ import org.mmtk.utility.sanitychecker.SanityChecker;
 import org.mmtk.utility.statistics.Timer;
 import org.mmtk.utility.statistics.Stats;
 import org.j3.runtime.VM;
-
-//import org.mmtk.vm.VM;
 import org.mmtk.vm.Collection;
 
 
@@ -162,7 +160,6 @@ public abstract class Plan implements Constants {
    * Constructor.
    */
   public Plan() {
-	org.j3.runtime.VM.sysWriteln("=====Plan Constructor");
     /* Create base option instances */
     Options.verbose = new Verbose();
     Options.verboseTiming = new VerboseTiming();
@@ -206,9 +203,15 @@ public abstract class Plan implements Constants {
    */
   @Interruptible
   public void postBoot() {
+<<<<<<< HEAD
     org.mmtk.vm.VM.statistics.perfEventInit(Options.perfEvents.getValue());
     if (Options.verbose.getValue() > 2) Space.printVMMap();
     if (Options.verbose.getValue() > 3) org.mmtk.vm.VM.config.printConfig();
+=======
+    VM.statistics.perfEventInit(Options.perfEvents.getValue());
+    if (Options.verbose.getValue() > 2) Space.printVMMap();
+    if (Options.verbose.getValue() > 3) VM.config.printConfig();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     if (Options.verbose.getValue() > 0) Stats.startAll();
     if (Options.eagerMmapSpaces.getValue()) Space.eagerlyMmapMMTkSpaces();
   }
@@ -289,7 +292,11 @@ public abstract class Plan implements Constants {
    */
   @Interruptible
   public void replacePhase(int oldScheduledPhase, int scheduledPhase) {
+<<<<<<< HEAD
     org.mmtk.vm.VM.assertions.fail("replacePhase not implemented for this plan");
+=======
+    VM.assertions.fail("replacePhase not implemented for this plan");
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   }
 
 
@@ -482,7 +489,7 @@ public abstract class Plan implements Constants {
    * Print out statistics at the start of a GC
    */
   public void printPreStats() {
-	//Options.verbose.setValue(1);
+	Options.verbose.setValue(2);
     if ((Options.verbose.getValue() == 1) ||
         (Options.verbose.getValue() == 2)) {
       Log.write("[GC "); Log.write(Stats.gcCount());

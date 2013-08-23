@@ -19,7 +19,10 @@ import org.mmtk.utility.heap.VMRequest;
 
 import org.vmmagic.pragma.*;
 import org.vmmagic.unboxed.*;
+<<<<<<< HEAD
 import org.mmtk.utility.*;
+=======
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 
 /**
  * This class implements a simple semi-space collector. See the Jones
@@ -76,7 +79,10 @@ public class SS extends StopTheWorld {
    * Constructor
    */
   public SS() {
+<<<<<<< HEAD
 Log.write("---------------------------SS constructor invoked");
+=======
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     ssTrace = new Trace(metaDataSpace);
   }
 
@@ -109,7 +115,12 @@ Log.write("---------------------------SS constructor invoked");
    */
   @Inline
   public void collectionPhase(short phaseId) {
+<<<<<<< HEAD
+	Log.write("\n" +"-----------------collectionpajse" + "\n");    
+	if (phaseId == SS.PREPARE) {
+=======
     if (phaseId == SS.PREPARE) {
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
       hi = !hi; // flip the semi-spaces
       // prepare each of the collected regions
       copySpace0.prepare(hi);

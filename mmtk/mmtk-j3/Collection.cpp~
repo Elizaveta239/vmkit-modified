@@ -11,8 +11,6 @@
 #include "vmkit/VirtualMachine.h"
 #include "MMTkObject.h"
 #include "VmkitGC.h"
-#include <iostream>
-
 namespace mmtk {
 
 extern "C" bool Java_org_j3_mmtk_Collection_isEmergencyAllocation__ (MMTkObject* C) {
@@ -21,14 +19,17 @@ extern "C" bool Java_org_j3_mmtk_Collection_isEmergencyAllocation__ (MMTkObject*
 }
 
 extern "C" void Java_org_j3_mmtk_Collection_reportAllocationSuccess__ (MMTkObject* C) {
-	  
 	vmkit::MutatorThread::get()->CollectionAttempts = 0;
 }
 
 extern "C" void JnJVM_org_j3_bindings_Bindings_collect__I(int why);
 
 extern "C" void Java_org_j3_mmtk_Collection_triggerCollection__I (MMTkObject* C, int why) {
+<<<<<<< HEAD
 	vmkit::MutatorThread* th = vmkit::MutatorThread::get();
+=======
+  vmkit::MutatorThread* th = vmkit::MutatorThread::get();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   if (why > 2) th->CollectionAttempts++;
 
   // Verify that another collection is not happening.
@@ -50,13 +51,21 @@ extern "C" void Java_org_j3_mmtk_Collection_triggerCollection__I (MMTkObject* C,
 }
 
 extern "C" void Java_org_j3_mmtk_Collection_joinCollection__ (MMTkObject* C) {
+<<<<<<< HEAD
  vmkit::Thread* th = vmkit::Thread::get();
+=======
+  vmkit::Thread* th = vmkit::Thread::get();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   assert(th->inRV && "Joining collection without a rendezvous");
   th->MyVM->rendezvous.join();
 }
 
 extern "C" int Java_org_j3_mmtk_Collection_rendezvous__I (MMTkObject* C, int where) {
+<<<<<<< HEAD
 	return 1;
+=======
+  return 1;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 }
 
 extern "C" int Java_org_j3_mmtk_Collection_maximumCollectionAttempt__ (MMTkObject* C) {

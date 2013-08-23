@@ -14,7 +14,7 @@ package org.mmtk.utility;
 
 import org.j3.mmtk.*;
 import org.j3.runtime.VM;
-import org.mmtk.vm.VM;
+//import org.mmtk.vm.VM;
 
 import org.vmmagic.unboxed.*;
 import org.vmmagic.pragma.*;

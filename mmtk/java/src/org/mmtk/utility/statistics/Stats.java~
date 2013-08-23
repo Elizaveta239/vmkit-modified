@@ -11,14 +11,22 @@
  *  regarding copyright ownership.
  */
 package org.mmtk.utility.statistics;
+<<<<<<< HEAD
 import org.j3.runtime.VM;
+=======
+
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 import org.mmtk.plan.Plan;
 import org.mmtk.utility.Log;
 import org.mmtk.utility.options.Options;
 import org.mmtk.utility.options.PrintPhaseStats;
 import org.mmtk.utility.options.XmlStats;
 
+<<<<<<< HEAD
 //import org.mmtk.vm.VM;
+=======
+import org.mmtk.vm.VM;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 
 import org.vmmagic.pragma.*;
 
@@ -43,7 +51,11 @@ import org.vmmagic.pragma.*;
   private static Counter[] counter;
   static int phase = 0;
   private static int gcCount = 0;
+<<<<<<< HEAD
   static boolean gatheringStats = true;
+=======
+  static boolean gatheringStats = false;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   static boolean exceededPhaseLimit = false;
 
   /****************************************************************************
@@ -82,7 +94,6 @@ import org.vmmagic.pragma.*;
    * phase change.
    */
   public static void startGC() {
-  	org.j3.runtime.VM.sysWriteln("==================startGC");
     gcCount++;
     if (!gatheringStats) return;
     if (phase < MAX_PHASES - 1) {
@@ -121,7 +132,11 @@ import org.vmmagic.pragma.*;
     if (gatheringStats) {
       Log.writeln("Error: calling Stats.startAll() while stats running");
       Log.writeln("       verbosity > 0 and the harness mechanism may be conflicitng");
+<<<<<<< HEAD
       if (org.mmtk.vm.VM.VERIFY_ASSERTIONS) org.mmtk.vm.VM.assertions._assert(false);
+=======
+      if (VM.VERIFY_ASSERTIONS) VM.assertions._assert(false);
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     }
     gatheringStats = true;
     for (int c = 0; c < counters; c++) {
@@ -260,7 +275,11 @@ import org.vmmagic.pragma.*;
   public static void printStatsXml() {
     Xml.begin();
     Options.set.logXml();
+<<<<<<< HEAD
     org.mmtk.vm.VM.config.printConfigXml();
+=======
+    VM.config.printConfigXml();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     if (Options.printPhaseStats.getValue())
       printPhasesXml();
     printTotalsXml();

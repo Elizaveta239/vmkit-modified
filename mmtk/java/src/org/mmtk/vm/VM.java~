@@ -24,7 +24,10 @@ import org.mmtk.vm.gcspy.Util;
 import org.vmmagic.pragma.Untraced;
 import org.vmmagic.unboxed.Address;
 import org.vmmagic.unboxed.Offset;
+<<<<<<< HEAD
 import  org.j3.mmtk.*;
+=======
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 
 /**
  * This class is responsible for all VM-specific functionality required
@@ -112,7 +115,11 @@ public final class VM {
   @Untraced
   public static final Statistics statistics;
   @Untraced
+<<<<<<< HEAD
   public static final org.j3.mmtk.Strings strings;
+=======
+  public static final Strings strings;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   @Untraced
   public static final TraceInterface traceInterface;
   @Untraced
@@ -125,7 +132,11 @@ public final class VM {
    * above, reflectively binding to the appropriate host jvm
    * classes.
    */
+<<<<<<< HEAD
   private static final org.j3.mmtk.Factory factory;
+=======
+  private static final Factory factory;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   private static final String vmFactory;
 
   /**
@@ -138,9 +149,15 @@ public final class VM {
   static {
     /* Identify the VM-specific factory using reflection */
     vmFactory = System.getProperty("mmtk.hostjvm");
+<<<<<<< HEAD
     org.j3.mmtk.Factory xfa = null;
     try {
+      xfa = (org.j3.mmtk.Factory) Class.forName(vmFactory).newInstance();
+=======
+    Factory xfa = null;
+    try {
       xfa = (Factory) Class.forName(vmFactory).newInstance();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     } catch (Exception e) {
       e.printStackTrace();
       System.exit(-1);     // we must *not* go on if the above has failed

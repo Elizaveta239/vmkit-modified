@@ -237,9 +237,15 @@ public final class Factory extends org.mmtk.vm.Factory {
    * @see Strings
    * @return A concrete VM-specific Strings instance.
    */
-  public org.j3.mmtk Strings newStrings() {
+<<<<<<< HEAD
+  public org.j3.mmtk.Strings newStrings() {
     try {
       return new org.j3.mmtk.Strings();
+=======
+  public org.mmtk.vm.Strings newStrings() {
+    try {
+      return new Strings();
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
     } catch (Exception e) {
       VM.sysFail("Failed to allocate new Strings!");
       return null; // never get here

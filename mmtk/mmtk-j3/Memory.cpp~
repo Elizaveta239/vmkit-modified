@@ -12,14 +12,17 @@
 #include "MMTkObject.h"
 
 #include <sys/mman.h>
+<<<<<<< HEAD
 #include <iostream>
+#include <stdio.h>
+=======
 
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 namespace mmtk {
 
 class InitCollector {
 public:
   InitCollector() {
-    std::cerr << "----------------------------" << std::endl;
     uint32 flags = MAP_PRIVATE | MAP_ANON | MAP_FIXED;
     void* baseAddr = mmap((void*)vmkit::kGCMemoryStart, vmkit::kGCMemorySize, PROT_READ | PROT_WRITE,
                           flags, -1, 0);
@@ -54,7 +57,12 @@ Java_org_j3_mmtk_Memory_dzmmap__Lorg_vmmagic_unboxed_Address_2I(MMTkObject* M,
                                                                 void* start,
                                                                 sint32 size) {
   // Already mmapped during initialization.
+<<<<<<< HEAD
+  //LOG_TRACE
+	return 0;
+=======
   return 0;
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 }
 
 extern "C" uint8_t
@@ -65,7 +73,11 @@ Java_org_j3_mmtk_Memory_mprotect__Lorg_vmmagic_unboxed_Address_2I (MMTkObject* M
 
 extern "C" uint8_t
 Java_org_j3_mmtk_Memory_munprotect__Lorg_vmmagic_unboxed_Address_2I (MMTkObject* M, word_t address, sint32 size) {
+<<<<<<< HEAD
+	int val = mprotect((void*)address, size, PROT_READ | PROT_WRITE);
+=======
   int val = mprotect((void*)address, size, PROT_READ | PROT_WRITE);
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   return (val == 0);
 }
 
@@ -73,7 +85,12 @@ extern "C" void
 Java_org_j3_mmtk_Memory_zero__Lorg_vmmagic_unboxed_Address_2Lorg_vmmagic_unboxed_Extent_2(MMTkObject* M,
                                                                                           void* addr,
                                                                                           word_t len) {
+<<<<<<< HEAD
+ //LOG_TRACE
+	memset(addr, 0, len);
+=======
   memset(addr, 0, len);
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 }
 
 extern "C" void

@@ -11,11 +11,19 @@
  *  regarding copyright ownership.
  */
 package org.mmtk.plan.marksweep;
+<<<<<<< HEAD
 import org.mmtk.utility.*;
+=======
+
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 import org.mmtk.plan.*;
 import org.mmtk.policy.MarkSweepSpace;
 import org.mmtk.policy.Space;
 import org.mmtk.utility.heap.VMRequest;
+<<<<<<< HEAD
+import org.j3.runtime.VM;
+=======
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 
 import org.vmmagic.pragma.*;
 import org.vmmagic.unboxed.*;
@@ -67,9 +75,14 @@ public class MS extends StopTheWorld {
    */
   @Inline
   @Override
-  public void collectionPhase(short phaseId) {
-	Log.write("fdfgg");    
+<<<<<<< HEAD
+  public void collectionPhase(short phaseId) {    
 	if (phaseId == PREPARE) {
+=======
+  public void collectionPhase(short phaseId) {
+
+    if (phaseId == PREPARE) {
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
       super.collectionPhase(phaseId);
       msTrace.prepare();
       msSpace.prepare(true);

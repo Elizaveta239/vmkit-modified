@@ -75,7 +75,7 @@ public class CopyMS extends StopTheWorld {
   /**
    * Constructor.
  */
-  public CopyMS() {
+  public CopyMS() { 
     trace = new Trace(metaDataSpace);
   }
 

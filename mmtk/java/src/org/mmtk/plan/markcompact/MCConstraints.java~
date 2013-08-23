@@ -18,7 +18,10 @@ import org.mmtk.policy.MarkCompactSpace;
 import org.mmtk.policy.MarkCompactLocal;
 
 import org.vmmagic.pragma.*;
+<<<<<<< HEAD
 import org.mmtk.utility.*;
+=======
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
 
 /**
  * This class and its subclasses communicate to the host VM/Runtime
@@ -35,8 +38,13 @@ public class MCConstraints extends StopTheWorldConstraints {
   @Override
   public boolean needsLinearScan() { return true; }
   @Override
+<<<<<<< HEAD
   public int maxNonLOSDefaultAllocBytes() { 
+Log.write("-------------------------------------dfsjhfjskryhukweryhkfhkjdshfkjsfhkjfshjkshfkj");
  return MarkCompactLocal.MINIMUM_DATA_SIZE; }
+=======
+  public int maxNonLOSDefaultAllocBytes() { return MarkCompactLocal.MINIMUM_DATA_SIZE; }
+>>>>>>> ef8817cb043c6021847596322ab1d5cf74bf79ee
   @Override
   public int gcHeaderBits() { return MarkCompactSpace.LOCAL_GC_BITS_REQUIRED; }
   @Override
